@@ -19,8 +19,6 @@ class FullScreenApp(object):
     """
     全画面アプリケーションクラス
     """
-    # テンプレートのディレクトリ
-
     # キーバインディング
     kb = KeyBindings()
 
@@ -30,7 +28,7 @@ class FullScreenApp(object):
     })
 
     @classmethod
-    def get_file_name(cls):
+    def get_file_name(cls) -> str:
         """
         template/配下の.txtのファイル名を取得
         """
@@ -43,7 +41,7 @@ class FullScreenApp(object):
                     file_names.append(file_name)
         return file_names
 
-    # テンプレート一覧を取得(仮)
+    # テンプレート一覧を取得
     @classmethod
     def get_templates_list(cls) -> List[Window]:
         template_names: List[str] = cls.get_file_name()
@@ -74,7 +72,7 @@ class FullScreenApp(object):
 
     # 実行関数
     @classmethod
-    def run(cls):
+    def run(cls) -> None:
         app = Application(
             layout=Layout(cls.get_root_container()),
             key_bindings=cls.kb,
