@@ -57,8 +57,12 @@ class FullScreenApp(object):
     def get_windows(cls) -> List[Window]:
         windows:List[Window] = []
 
-        main_str = Window(height=LayoutDimension.exact(1), content=FormattedTextControl("Select Template(Use arrow keys to move and press Enter to select)", focusable=False), style="class:main")
+        main_str = Window(height=LayoutDimension.exact(1), content=FormattedTextControl("Select Template!", focusable=False), style="class:main")
         windows.append(main_str)
+        sub_str = Window(height=LayoutDimension.exact(1), content=FormattedTextControl("Use arrow keys to move and press Enter to select", focusable=False), style="class:main")
+        windows.append(sub_str)
+        exit_str = Window(height=LayoutDimension.exact(1), content=FormattedTextControl("press [Ctrl + c] to exit", focusable=False), style="class:main")
+        windows.append(exit_str)
         windows.extend(cls.get_templates_list())
         return windows
 
