@@ -26,7 +26,7 @@ class FullScreenApp(object):
 
     # フォント
     text_style = Style.from_dict({
-        "main": '#FF9D00 underline bold',
+        "main": '#FF9D00',
     })
 
     @classmethod
