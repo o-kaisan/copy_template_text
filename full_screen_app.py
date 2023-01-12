@@ -61,6 +61,8 @@ class FullScreenApp(object):
         windows.append(sub_str)
         exit_str = Window(height=LayoutDimension.exact(1), content=FormattedTextControl("press [Ctrl + c] to exit", focusable=False), style="class:main")
         windows.append(exit_str)
+        bar_str = Window(height=LayoutDimension.exact(1), content=FormattedTextControl("----------------------------------------------------", focusable=False), style="class:main")
+        windows.append(bar_str)
         windows.extend(cls.get_templates_list())
         return windows
 
